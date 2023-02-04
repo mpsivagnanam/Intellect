@@ -5,7 +5,7 @@ Intellect Design java tech lead assignment
 
 ## Notification Application
 
-###### Problem Statement
+### Problem Statement
 
 Create a Notification Dispatcher. Create an Rest endpoint that allows the user to provide 3 inputs:
 A notification message
@@ -14,29 +14,26 @@ A channel of notification - Email, SMS, WhatsApp
 Assume credentials are available in request header. Application identifies the appropriate channel adapter and sends out the notification to the intended recipients
 
 
-###### Introduction
+### Introduction
 
 Created notification application to send email, sms and whatsapp notification to recipient.
 
-###### Technology Used
+### Technology Used
 
-1.Spring boot 2.7
-2.Java 8
-3.Twilio library
-4.Maven
-5.Mockito 
-6.Open API Documentation
+1. Spring boot 2.7 
+2. Java 8
+3. Twilio library
+4. Maven
+5. Mockito 
+6. Open API Documentation
 
-###### API Details
+### API Details
 
 Created common api to send all the notification. Based on the channel respective notification will be trigger
 
-URL : http://localhost:8080/send
-
-Method : Post
-
-
-Request : 
+**URL : http://localhost:8080/send**
+**Method : Post**
+**Request :** 
 
 {
       "message": "This is test message ", // Notification message  
@@ -44,7 +41,7 @@ Request :
       "channel": "SMS/EMAIL/WHATSAPP" // Select any one Channel 
 }  
 
-Response :
+**Response :**
 
 {
     "responseCode": 200, //Response code 200 or 500 or 400
@@ -52,45 +49,45 @@ Response :
     "error": null // Error Response
 }
 
-###### Documentation
+### Documentation
 
 Open doc api is created to use api effectively.
 
-URL :  http://localhost:8080/swagger-ui/index.html#/
+**URL :  http://localhost:8080/swagger-ui/index.html#/ **
 
 
-###### Implementation
+### Implementation
 
-NotificationController: Used to accept the notification request and process the notification response.
+**NotificationController:** Used to accept the notification request and process the notification response.
 
-NotificationService: Used to process the channel from incoming request and call the respective notification channel service
+**NotificationService:** Used to process the channel from incoming request and call the respective notification channel service
 
-EmailService: Email service class will validate the incoming request and then construct the email request and send email to intend recipient.
+**EmailService:** Email service class will validate the incoming request and then construct the email request and send email to intend recipient.
 
-SMSService: SMS Service class also will validate the incoming request and construct the request for MSG91 api and send the request to MSG91 API.
+**SMSService:** SMS Service class also will validate the incoming request and construct the request for MSG91 api and send the request to MSG91 API.
 
-WhatsAppService: WhatsApp service class will validate the phone number format. If the phone number is valid then it will construct the request for TWILIO api and send the request to TWILIO api.
+**WhatsAppService:** WhatsApp service class will validate the phone number format. If the phone number is valid then it will construct the request for TWILIO api and send the request to TWILIO api.
 
-ExceptionHandler: Used to process the exception and send the error response
+**ExceptionHandler:** Used to process the exception and send the error response
 
-NotificationTests: This class contains the unit testing
+**NotificationTests:** This class contains the unit testing
 
-###### Validation
-Request validation using javax validator and recipient validation using regex
+### Validation
+Request validation using **javax validator** and recipient validation using **regex**
 
-###### Test
+### Test
 
-We have cover unit testing using Mockito framework and cover positive and negative scenario
+We have cover unit testing using **mockito** framework and cover positive and negative scenario
 
-###### Build
+### Build
 
 TO build the project use below command
 
-mvn clean install
+**mvn clean install**
 
 To run the application use below command
 
-java -jar <JAR_NAME>.jar
+**java -jar <JAR_NAME>.jar**
 
 
 ## Excersice 2: SQL Problem
@@ -99,23 +96,23 @@ Acme Bank Customers can each have multiple Accounts. Acme bank has 1Million+ cus
 
 1.Write an SQL query to find out the top 3 High Net worth Customers of Acme bank.
 
-SELECT CUSTOMER_ID FROM ( SELECT CUSTOMER_ID, 
+**SELECT CUSTOMER_ID FROM ( SELECT CUSTOMER_ID, 
 SUM (ACCOUNT_BALANCE) AS AMOUNT
 FROM ACCOUNT_MASTER
 GROUP BY CUSTOMER_ID ORDER BY AMOUNT DESC LIMIT 0,3 );
 
 2.Suggest options/techniques to improve model and query performance
 
-Indexing: It will increase the speed so create Index on CUSTOMER_ID
+**Indexing:** It will increase the speed so create Index on CUSTOMER_ID
 
-Query Optimization : Avoid using wild card *, we need to use column name
+**Query Optimization :** Avoid using wild card *, we need to use column name
 
-Batch Process: To process the huge data, use batch process to 
+**Batch Process:** To process the huge data, use batch process.  
 
-Cache: Use cache for frequently using queries
+**Cache:** Use cache for frequently using queries
 
-Avoid sub queries : Multiple sub queries using where will reduce the performance
+**Avoid sub queries:** Multiple sub queries using where will reduce the performance
 
-Data type: Appropriate data type and its length
+**Data type:** Appropriate data type and its length
 
-Pagination: Use pagination it will not scan the database fully 
+**Pagination:** Use pagination it will not scan the database fully 
