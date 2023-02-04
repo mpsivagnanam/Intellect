@@ -38,23 +38,28 @@ Created common api to send all the notification. Based on the channel respective
 
 {
       "message": "This is test message ", // Notification message  
+      
       "recipients": ["+91999999999","+91888888888"], //recipient list 
-      "channel": "SMS/EMAIL/WHATSAPP" // Select any one Channel 
+      
+      "channel": "SMS/EMAIL/WHATSAPP" // Select any one Channel      
 }  
 
 **Response :**
 
 {
     "responseCode": 200, //Response code 200 or 500 or 400
+    
     "response": "SMS successfully sent", // Response status
+    
     "error": null // Error Response
+    
 }
 
 ### Documentation
 
 Open doc api is created to use api effectively.
 
-**Swagger URL :  http://localhost:8080/swagger-ui/index.html#/ **
+**Swagger URL :  http://localhost:8080/swagger-ui/index.html#/**
 
 
 ### Implementation
@@ -65,9 +70,9 @@ Open doc api is created to use api effectively.
 
 **EmailService:** Email service class will validate the incoming request and then construct the email request and send email to intend recipient.
 
-**SMSService:** SMS Service class also will validate the incoming request and construct the request for MSG91 api and send the request to MSG91 API.
+**SMSService:** SMS Service class also will validate the incoming request and construct the request for **MSG91** api and send the request to MSG91 API.
 
-**WhatsAppService:** WhatsApp service class will validate the phone number format. If the phone number is valid then it will construct the request for TWILIO api and send the request to TWILIO api.
+**WhatsAppService:** WhatsApp service class will validate the phone number format. If the phone number is valid then it will construct the request for **TWILIO** api and send the request to TWILIO api.
 
 **ExceptionHandler:** Used to process the exception and send the error response
 
