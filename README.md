@@ -1,4 +1,4 @@
-# Intellect
+# Intellect Design
 Intellect Design java tech lead assignment
 
 ## Excersice : 1 Java problem
@@ -12,7 +12,6 @@ A notification message
 A recipient or recipients
 A channel of notification - Email, SMS, WhatsApp
 Assume credentials are available in request header. Application identifies the appropriate channel adapter and sends out the notification to the intended recipients
-
 
 ### Introduction
 
@@ -31,8 +30,10 @@ Created notification application to send email, sms and whatsapp notification to
 
 Created common api to send all the notification. Based on the channel respective notification will be trigger
 
-**URL : http://localhost:8080/send**
+**API URL : http://localhost:8080/send**
+
 **Method : Post**
+
 **Request :** 
 
 {
@@ -53,7 +54,7 @@ Created common api to send all the notification. Based on the channel respective
 
 Open doc api is created to use api effectively.
 
-**URL :  http://localhost:8080/swagger-ui/index.html#/ **
+**Swagger URL :  http://localhost:8080/swagger-ui/index.html#/ **
 
 
 ### Implementation
@@ -73,6 +74,7 @@ Open doc api is created to use api effectively.
 **NotificationTests:** This class contains the unit testing
 
 ### Validation
+
 Request validation using **javax validator** and recipient validation using **regex**
 
 ### Test
@@ -99,7 +101,7 @@ Acme Bank Customers can each have multiple Accounts. Acme bank has 1Million+ cus
 **SELECT CUSTOMER_ID FROM ( SELECT CUSTOMER_ID, 
 SUM (ACCOUNT_BALANCE) AS AMOUNT
 FROM ACCOUNT_MASTER
-GROUP BY CUSTOMER_ID ORDER BY AMOUNT DESC LIMIT 0,3 );
+GROUP BY CUSTOMER_ID ORDER BY AMOUNT DESC LIMIT 0,3 );**
 
 2.Suggest options/techniques to improve model and query performance
 
