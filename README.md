@@ -5,7 +5,7 @@ Intellect Design java tech lead assignment
 
 ## Notification Application
 
-### Problem Statement
+#### Problem Statement
 
 Create a Notification Dispatcher. Create an Rest endpoint that allows the user to provide 3 inputs:
 A notification message
