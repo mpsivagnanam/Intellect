@@ -52,7 +52,7 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler{
                                                                HttpHeaders headers, HttpStatus status, WebRequest request) {
         String genericMessage = "Request parameter is not available in request ";
         if(exception.getMessage().contains("Enum")){
-            genericMessage = "Channel is required and it should be EMAIL/SMS/WHATSAPP only";
+            genericMessage = "Channel is required and it should be EMAIL / SMS / WHATSAPP only";
         }
         NotificationResponse notificationResponse = new NotificationResponse();
         notificationResponse.setError(genericMessage);
